@@ -22,7 +22,7 @@ async function DeleteAbl(req, res) {
     if (!valid) {
       res.status(400).json({
         code: "dtoInIsNotValid",
-        message: "dtoIn is not valid",
+        message: "dtoIn is not valid trdelete",
         validationError: ajv.errors,
       });
       return;

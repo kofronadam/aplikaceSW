@@ -2,11 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const trackerFolderPath = path.join(
-  __dirname,
-  "storage",
-  "trackerList"
-);
+const trackerFolderPath = path.join( __dirname, "storage", "trackerList");
 
 // Method to read an tracker from a file
 function get(trackerId) {

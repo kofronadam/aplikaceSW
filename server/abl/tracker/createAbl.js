@@ -6,16 +6,16 @@ addFormats(ajv);
 const trackerDao = require("../../dao/tracker-dao.js");
 const categoryDao = require("../../dao/category-dao.js");
 
-const schema = {
+const schema = {                                        //TODO: zkontrolovat 
   type: "object",
   properties: {
-    skiresort: { type: "string", maxLength: 150 },  //TODO: zkontrolovat 
+    skiresort: { type: "string", maxLength: 100 },  
     activity: { type: "number" },
     date: { type: "string", format: "date" },
     note: { type: "string", maxLength: 250 },
     categoryId: { type: "string" },
   },
-  required: ["skiresort", "aktivita", "date", "categoryId"],
+  required: ["skiresort", "activity", "date", "categoryId"],
   additionalProperties: false,
 };
 
@@ -28,7 +28,7 @@ async function CreateAbl(req, res) {
     if (!valid) {
       res.status(400).json({
         code: "dtoInIsNotValid",
-        message: "dtoIn is not valid",
+        message: "dtoIn is not valid trcreate",
         validationError: ajv.errors,
       });
       return;

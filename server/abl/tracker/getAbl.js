@@ -25,7 +25,7 @@ async function GetAbl(req, res) {
     if (!valid) {
       res.status(400).json({
         code: "dtoInIsNotValid",
-        message: "dtoIn is not valid",
+        message: "dtoIn is not valid trget",
         validationError: ajv.errors,
       });
       return;
